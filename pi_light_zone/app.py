@@ -15,9 +15,9 @@ led_state = False
 def button_callback(channel):
     global led_state
     led_state = not led_state
+    print("GPIO pin state is: " + str(led_state))
     GPIO.output(11, led_state)
-    print("Button was pressed\n\n")
-    # time.sleep(1) # debounce switch
+    print("Button was pressed\n")
     
     
 GPIO.add_event_detect(13, GPIO.FALLING, callback=button_callback, bouncetime=300)
