@@ -20,7 +20,7 @@ def button_callback(channel):
     # time.sleep(1) # debounce switch
     
     
-GPIO.add_event_detect(13, GPIO.FALLING,callback=button_callback)
+GPIO.add_event_detect(13, GPIO.FALLING, callback=button_callback, bouncetime=300)
 
 message = input("Press any key to quit\n\n")
 GPIO.cleanup()
